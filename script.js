@@ -278,7 +278,7 @@ function deleteAllTask(){
 
 // setear un nuevo item llamado "task array" y pasandole los datos
 // de taskarray obj a string con json.strigify
-localStorage.setItem("taskArray", JSON.stringify(taskArray));
+localStorage.setItem("taskArray", JSON.stringify(task));
 // const array = localStorage.getItem("taskArrays");
 // console.log(JSON.parse(array));
 
