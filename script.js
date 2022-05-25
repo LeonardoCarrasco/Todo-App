@@ -22,15 +22,14 @@ var task = [
     }
 ]
 
-// console.log(taskArray);
 
 // Local storage 
 
 // setear un nuevo item llamado "task array" y pasandole los datos
 // de taskarray obj a string con json.strigify
+
 //localStorage.setItem("taskArray", JSON.stringify(task));
 sessionStorage.setItem("taskArray", JSON.stringify(task));
-console.log("pichipon")
 
 // const array = localStorage.getItem("taskArrays");
 // console.log(JSON.parse(array));
@@ -51,8 +50,6 @@ function getLocalStorageItem(){
 
 // De esta forma obtenemos el valor del array taskArray[0].taskname
 
-// console.log(taskArray);
-// console.log(taskArray[0].taskname);
 
 const selectID = "select";
 
@@ -173,8 +170,7 @@ menuTabs(0);
 function addTask(){
 
     const arrayTaskObj = getLocalStorageItem();
-    const input = document.querySelector("#input");
-    // const submit = document.querySelector("#submit");    
+    const input = document.querySelector("#input");   
 
     var section = document.querySelector(".check-container");
 
@@ -280,13 +276,13 @@ function deleteAllTask(){
     const arrayTaskObj = getLocalStorageItem();
 
     for (var i = arrayTaskObj.length - 1; i >= 0; i--) {
-        console.log(arrayTaskObj[i]);
+        // console.log(arrayTaskObj[i]);
         let isChecked = arrayTaskObj[i].isCheck; 
         console.log(isChecked);
         if(isChecked){
             arrayTaskObj.splice(i,1);
-            console.log(arrayTaskObj);
-            console.log(arrayTaskObj.length);
+            // console.log(arrayTaskObj);
+            // console.log(arrayTaskObj.length);
         }
         
     }
