@@ -278,17 +278,19 @@ function deleteAllTask(){
 
 // setear un nuevo item llamado "task array" y pasandole los datos
 // de taskarray obj a string con json.strigify
-localStorage.setItem("taskArray", JSON.stringify(task));
+//localStorage.setItem("taskArray", JSON.stringify(task));
+sessionStorage.setItem("taskArray", JSON.stringify(task));
+
 // const array = localStorage.getItem("taskArrays");
 // console.log(JSON.parse(array));
 
 function updateLocalStorageItem(array){
-    localStorage.setItem("taskArray", JSON.stringify(array));
+    sessionStorage.setItem("taskArray", JSON.stringify(array));
     return true;
 }
 
 function getLocalStorageItem(){
-    const strArray = localStorage.getItem("taskArray");
+    const strArray = sessionStorage.getItem("taskArray");
     const objArray = JSON.parse(strArray);
     return objArray;
 
