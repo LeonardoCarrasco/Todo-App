@@ -120,10 +120,13 @@ form button{
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;    
+    transition: ease-in-out 200ms;
 }
 
-form button:F{
-    background: #006eff;
+
+
+form button:hover{
+    background: #0064e6;
 }
 
 .check-container{
