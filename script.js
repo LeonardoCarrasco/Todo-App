@@ -24,6 +24,28 @@ var task = [
 
 // console.log(taskArray);
 
+// Local storage 
+
+// setear un nuevo item llamado "task array" y pasandole los datos
+// de taskarray obj a string con json.strigify
+//localStorage.setItem("taskArray", JSON.stringify(task));
+sessionStorage.setItem("taskArray", JSON.stringify(task));
+console.log("pichipon")
+
+// const array = localStorage.getItem("taskArrays");
+// console.log(JSON.parse(array));
+
+function updateLocalStorageItem(array){
+    sessionStorage.setItem("taskArray", JSON.stringify(array));
+    return true;
+}
+
+function getLocalStorageItem(){
+    const strArray = sessionStorage.getItem("taskArray");
+    const objArray = JSON.parse(strArray);
+    return objArray;
+
+}
 
 
 
@@ -274,24 +296,4 @@ function deleteAllTask(){
 
 }
 
-// Local storage 
 
-// setear un nuevo item llamado "task array" y pasandole los datos
-// de taskarray obj a string con json.strigify
-//localStorage.setItem("taskArray", JSON.stringify(task));
-sessionStorage.setItem("taskArray", JSON.stringify(task));
-
-// const array = localStorage.getItem("taskArrays");
-// console.log(JSON.parse(array));
-
-function updateLocalStorageItem(array){
-    sessionStorage.setItem("taskArray", JSON.stringify(array));
-    return true;
-}
-
-function getLocalStorageItem(){
-    const strArray = sessionStorage.getItem("taskArray");
-    const objArray = JSON.parse(strArray);
-    return objArray;
-
-}
