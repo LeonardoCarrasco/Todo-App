@@ -59,7 +59,7 @@ const all = document.querySelector(".all");
 const active = document.querySelector(".active");
 const completed = document.querySelector(".completed");
 const formContainer = document.querySelector(".add-form-container");
-
+const input = document.querySelector("#input");
 // access to child .check-container of the section all , active & completed
 
 const containerTaskAll = all.querySelector(".check-container");
@@ -67,12 +67,27 @@ const containerTaskActive = active.querySelector(".check-container");
 const containerTaskCompleted = completed.querySelector(".check-container");
 
 
+input.addEventListener("keypress", (e)=>{
+
+     if (e.key =="Enter") {
+        e.preventDefault();
+        addTask();
+        // if (input.value == "") {
+        //     alert("escribi algo")
+        // }
+        // else{
+        //     addTask();            
+        // }
+
+    }
+    
+    
+})
 
 function loadAllTask(){
 
     containerTaskAll.innerHTML ="";
     const arrayTaskObj = getLocalStorageItem();
-    console.log(arrayTaskObj);
 
     for(i=0; i < arrayTaskObj.length; i++){
 
@@ -253,7 +268,6 @@ function deleteTask(element){
         const index = arrayTaskObj[i].taskname; 
  
         if(textValue == index){
-            console.log("found it");
             found = true;
         }
         else{
